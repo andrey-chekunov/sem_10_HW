@@ -97,12 +97,12 @@ def get_weather(message):
         bot.send_message(message.from_user.id,
                          f'В городе {city} сейчас {round(w[0]["temp"])} градусов, чувствуется как {round(w[0]["feels_like"])} градусов')
         bot.send_message(message.from_user.id, w[1])
-        bot.send_message(message.from_user.id, 'Введите название города: ')
-        bot.register_next_step_handler(message, get_weather)
+        # bot.send_message(message.from_user.id, 'Введите название города: ')
+        # bot.register_next_step_handler(message, get_weather)
     except Exception as e:
-        bot.send_message(message.from_user.id, "Такого города нет в базе. Еще разок")
-        bot.send_message(message.from_user.id, 'Введите название города: ')
-        bot.register_next_step_handler(message, get_weather)
+        bot.send_message(message.from_user.id, "Такого города нет в базе")
+        # bot.send_message(message.from_user.id, 'Введите название города: ')
+        # bot.register_next_step_handler(message, get_weather)
         # print(e)
 
 
